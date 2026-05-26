@@ -53,6 +53,10 @@
         };
     };
 
+    combos {
+	compatible = "zmk,combos";
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -109,14 +113,14 @@
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│ RESET    │  Win+1   │  Win+2   │  Win+3   │PROFILE 0 │   │          │  Win+7   │  Win+8   │  Win+9   │  RESET   │
+           &sys_reset &kp LG(N1) &kp LG(N2) &kp LG(N3) &bt BT_SEL 0    &trans    &kp LG(N7) &kp LG(N8) &kp LG(N9) &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│BOOTLOADER│  Win+4   │  Win+5   │  Win+6   │PROFILE 1 │   │          │  Win+4   │  Win+5   │  Win+6   │BOOTLOADER│
+          &bootloader &kp LG(N4) &kp LG(N5) &kp LG(N6) &bt BT_SEL 1    &trans    &kp LG(N4) &kp LG(N5) &kp LG(N6) &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+        //│Win+Sh+1  │Win+Sh+2  │Win+Sh+3  │ CLEAR BT │PROFILE 2 │   │  Win+0   │Win+Sh+7  │Win+Sh+8  │Win+Sh+9  │Win+Sh+0  │
+          &kp LG(LS(N1)) &kp LG(LS(N2)) &kp LG(LS(N3)) &bt BT_CLR &bt BT_SEL 2  &kp LG(N0) &kp LG(LS(N7)) &kp LG(LS(N8)) &kp LG(LS(N9)) &kp LG(LS(N0))
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
